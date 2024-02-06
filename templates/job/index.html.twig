@@ -1,0 +1,25 @@
+{% extends 'styleBase.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>All jobs</h1>
+        <div class="job-grid">
+            {% for job in jobs %}
+                <div class="job">
+                    <a class="q-title" href="{{ path('app_job_show', { slug: job.slug }) }}">
+                        <h2><strong>{{ job.title }}</strong></h2>
+                    </a>
+                    <h4>{{ job.description }}</h4>
+                    <br>
+                    {% for comment in job.comments %}
+                        <div class="comments">
+                        <p><strong>@{{ comment.user.username }}</strong></p>
+                        <p><strong>{{ comment.title }}</strong></p>
+                        <p><em>{{ comment.description }}</em></p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

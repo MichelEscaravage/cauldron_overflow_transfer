@@ -1,0 +1,41 @@
+{% extends 'styleBase.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="top-buttons">
+            <a href="{{ path('app_job') }}" class="back-button">
+                <button class="backButton">Back</button>
+            </a>
+            <a href="{{ path('create_comment', {'id':job.id}) }}" class="make-comment">
+                <button class="makeComment">Make Comment</button>
+            </a>
+        </div>
+
+        <div class="job-details">
+            <h1>{{ job.title }}</h1>
+            <p>{{ job.description }}</p>
+        </div>
+
+        <div class="comments-container">
+            <div class="comment-grid">
+                {% for comment in job.comments %}
+                    <div class="comment">
+                        <p><strong>{{ comment.user.username }}</strong></p>
+                        <p><strong>{{ comment.title }}</strong></p>
+                        <p><em>{{ comment.description }}</em></p>
+                        <div class="buttonsGroup">
+                            <a href="{{ path('edit_comment', {'id': comment.id, 'slug': job.slug}) }}">
+                                <button class="edit">EDIT</button>
+                            </a>
+                            <form action="{{ path('delete_comment') }}" method="POST">
+                                <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                                <button class="deleteButton" type="submit">Delete</button>
+                            </form>
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

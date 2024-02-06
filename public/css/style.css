@@ -1,0 +1,167 @@
+html {
+    background-color: lightgray;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.form {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.formInput
+{
+    display: flex;
+    flex-flow: column;
+}
+
+.formInput textarea
+{
+    width: 100%;
+    max-width: 100%;
+}
+.submitButton {
+    color: white;
+    border: 2px solid black;
+    border-radius: 10%;
+    background-color: #288612;
+}
+
+.buttonsGroup {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.edit {
+    color: white;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: #0076fc;
+}
+
+.deleteButton {
+    color: white;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: #fc0000;
+}
+
+.job-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.job {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5%;
+    max-height: 490px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    scroll-behavior: smooth;
+}
+
+.job a {
+    color: black;
+}
+
+.job-details {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.comments-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.comment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    max-height: 490px;
+    max-width: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    scroll-behavior: smooth;
+}
+
+.comment-grid:hover
+{
+    scrollbar-width: auto;
+    scrollbar-color: #888 #ffdd00;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.comments
+{
+    border-bottom: 2px dotted black;
+}
+.comment {
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+}
+
+.backButton
+{
+    color: black;
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 110%;
+    height: 110%;
+}
+
+.make-comment {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+.makeComment
+{
+    color: black;
+    border: 2px solid black;
+    border-radius: 10%;
+    width: 110%;
+    height: 110%;
+}

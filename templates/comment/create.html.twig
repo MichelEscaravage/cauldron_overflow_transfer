@@ -1,0 +1,29 @@
+{% extends 'styleBase.html.twig' %}
+
+{% block body %}
+    <div class="formContainer">
+        <h1>Submit comment</h1>
+
+        <a href="{{ path('app_job_show', {'slug': job.slug}) }}" class="back-button"><button>Back</button></a> <!-- Back button -->
+
+        <form class="form" action="{{ path('submit_comment', {'id': job.id}) }}" method="POST">
+            <div class="formInput">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+            </div>
+            <div class="formInput">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+            </div>
+            <div class="formInput">
+                <label for="title">title:</label>
+                <input type="text" name="title" id="title" required>
+            </div>
+            <div class="formInput">
+                <label for="description">description:</label><br>
+                <textarea name="description" id="description" cols="70" rows="10" required></textarea><br><br>
+            </div>
+            <button class="submitButton" type="submit">Submit Comment</button>
+        </form>
+    </div>
+{% endblock %}
